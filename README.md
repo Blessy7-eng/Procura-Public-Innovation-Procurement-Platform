@@ -1,4 +1,5 @@
-# PROCURA
+````markdown
+# 🚀 PROCURA
 
 ### Public Innovation Procurement Platform
 
@@ -10,9 +11,9 @@ It helps government departments move from identifying a real-world problem to di
 
 ---
 
-## 🚀 Problem
+# 🚀 Problem
 
-Traditional public procurement is primarily designed for standardized goods and established vendors.
+Traditional public procurement is primarily designed for **standardized goods and established vendors**.
 
 Innovative startups often face difficulties such as:
 
@@ -33,7 +34,7 @@ Government departments also face challenges in:
 
 ---
 
-## 💡 Our Solution
+# 💡 Our Solution
 
 **Procura creates a structured pathway for innovation procurement.**
 
@@ -57,86 +58,105 @@ KPI Measurement
 Evidence Review
         ↓
 Scale-up / Procurement Review
-👥 User Roles
-🏛️ Government Officer
+````
+
+---
+
+# 👥 User Roles
+
+## 🏛️ Government Officer
 
 Government departments can:
 
-Create innovation challenges
-Structure problems with AI assistance
-Discover relevant startup solutions
-Review applications
-Monitor pilots
-Track KPIs
-Review pilot evidence
-Conduct scale-up reviews
-View the complete activity trail
-🚀 Startup
+* Create innovation challenges
+* Structure problems with AI assistance
+* Discover relevant startup solutions
+* Review applications
+* Monitor pilots
+* Track KPIs
+* Review pilot evidence
+* Conduct scale-up reviews
+* View the complete activity trail
+
+## 🚀 Startup
 
 Startups can:
 
-Create their organization profile
-Add their solutions
-Discover government challenges
-View solution compatibility
-Apply to challenges
-Track applications
-Participate in pilots
-Submit pilot evidence
-⚖️ Evaluator
+* Create their organization profile
+* Add their solutions
+* Discover government challenges
+* View solution compatibility
+* Apply to challenges
+* Track applications
+* Participate in pilots
+* Submit pilot evidence
+
+## ⚖️ Evaluator
 
 Evaluators can:
 
-Review startup applications
-Score proposals
-Assess technical feasibility
-Evaluate innovation and scalability
-Review pilot performance
-Validate submitted evidence
-Support evidence-based evaluation
-🤖 AI-Assisted Features
+* Review startup applications
+* Score proposals
+* Assess technical feasibility
+* Evaluate innovation and scalability
+* Review pilot performance
+* Validate submitted evidence
+* Support evidence-based evaluation
 
-Procura uses AI as decision support, not as an autonomous decision-maker.
+---
 
-Challenge Structuring
+# 🤖 AI-Assisted Features
+
+Procura uses AI as **decision support**, not as an autonomous decision-maker.
+
+## Challenge Structuring
 
 Government officers can describe a problem in plain language.
 
 AI helps structure it into:
 
-Problem statement
-Target users
-Expected outcomes
-Required capabilities
-Suggested KPIs
-Pilot considerations
-Startup Match Explanation
+* Problem statement
+* Target users
+* Expected outcomes
+* Required capabilities
+* Suggested KPIs
+* Pilot considerations
+
+## Startup Match Explanation
 
 Procura identifies potential startup matches based on predefined matching criteria and uses AI to explain:
 
-Why the solution matches
-Relevant capabilities
-Potential gaps
-Pilot Evidence Summary
+* Why the solution matches
+* Relevant capabilities
+* Potential gaps
+
+## Pilot Evidence Summary
 
 AI can summarize submitted pilot evidence to help evaluators understand the results.
 
-AI does not make procurement, legal eligibility, rejection, or scale-up decisions.
+> **AI does not make procurement, legal eligibility, rejection, or scale-up decisions.**
 
-🧠 Startup Matching
+---
+
+# 🧠 Startup Matching
 
 Procura uses a transparent matching approach rather than relying entirely on AI.
 
-Criteria	Weight
-Capability Match	40%
-Problem Domain Match	25%
-Pilot Readiness	15%
-Implementation Fit	10%
-Previous Deployment Relevance	10%
+| Criteria                          | Weight |
+| --------------------------------- | -----: |
+| **Capability Match**              |    40% |
+| **Problem Domain Match**          |    25% |
+| **Pilot Readiness**               |    15% |
+| **Implementation Fit**            |    10% |
+| **Previous Deployment Relevance** |    10% |
 
 AI is used to explain the match rather than determine the final decision.
 
-🏗️ System Architecture
+---
+
+# 🏗️ System Architecture
+
+```text
                     PROCURA
           Public Innovation Procurement
                          │
@@ -173,61 +193,79 @@ AI is used to explain the match rather than determine the final decision.
              │ Data    │ │ Evidence   │
              │ Audit   │ │ Summary    │
              └─────────┘ └────────────┘
-🛠️ Technology Stack
-Technology	Purpose
-React + TypeScript	Frontend user portals
-Vite	Frontend development and build
-Node.js + Express.js	Backend APIs and business logic
-Supabase PostgreSQL	Application database
-Supabase Auth	Authentication
-Row Level Security	Role-based data security
-Gemini API	AI-assisted features
-Recharts	KPI and pilot visualizations
-Zod	Form and API validation
-Vercel	Frontend deployment
-Render / Railway	Backend deployment
-🔐 Security & Role-Based Access
+```
 
-Procura follows a role-based access model.
+---
+
+# 🛠️ Technology Stack
+
+| Technology                   | Purpose                         |
+| ---------------------------- | ------------------------------- |
+| **React + TypeScript**       | Frontend user portals           |
+| **Vite**                     | Frontend development and build  |
+| **Node.js + Express.js**     | Backend APIs and business logic |
+| **Supabase PostgreSQL**      | Application database            |
+| **Supabase Auth**            | Authentication                  |
+| **Row Level Security (RLS)** | Role-based data security        |
+| **Gemini API**               | AI-assisted features            |
+| **Recharts**                 | KPI and pilot visualizations    |
+| **Zod**                      | Form and API validation         |
+| **Vercel**                   | Frontend deployment             |
+| **Render / Railway**         | Backend deployment              |
+
+---
+
+# 🔐 Security & Role-Based Access
+
+Procura follows a **role-based access model**.
 
 Each authenticated account has one role:
 
+```text
 GOVERNMENT_OFFICER
 STARTUP
 EVALUATOR
+```
 
 Users can only access the workspace and resources permitted for their role.
 
-Role switching is not available inside the application.
+### Role Switching
+
+Role switching is **not available inside the application**.
 
 To access another account:
 
+```text
 Sign Out
    ↓
 Login
    ↓
 Authenticate with another account
+```
 
 The backend also validates authorization instead of relying only on frontend navigation.
 
-📊 Pilot & Evidence Management
+---
 
-Procura allows government departments to run controlled pilots before considering scale-up.
+# 📊 Pilot & Evidence Management
+
+Procura allows government departments to run **controlled pilots** before considering scale-up.
 
 Pilot information can include:
 
-Pilot duration
-Pilot location
-Target users
-Objectives
-Baseline values
-Target values
-Current KPI values
-Evidence submissions
-Evidence validation
+* Pilot duration
+* Pilot location
+* Target users
+* Objectives
+* Baseline values
+* Target values
+* Current KPI values
+* Evidence submissions
+* Evidence validation
 
-Example:
+### Example
 
+```text
 Resolution Time
 72 hours → 18 hours
 
@@ -236,13 +274,17 @@ SLA Compliance
 
 Citizen Satisfaction
 62% → 84%
+```
 
-The objective is to create a traceable evidence trail before a scale-up review.
+The objective is to create a **traceable evidence trail** before a scale-up review.
 
-🧾 Activity & Audit Trail
+---
+
+# 🧾 Activity & Audit Trail
 
 Procura maintains a chronological activity trail across the procurement workflow.
 
+```text
 Challenge Created
         ↓
 Startup Discovered
@@ -258,10 +300,15 @@ Pilot Results Recorded
 Evidence Validated
         ↓
 Scale-up Review
+```
 
 This improves transparency and helps users understand how a decision progressed through the platform.
 
-📁 Project Structure
+---
+
+# 📁 Project Structure
+
+```text
 procura/
 │
 ├── frontend/
@@ -290,48 +337,74 @@ procura/
 ├── .env.example
 ├── README.md
 └── ...
-⚙️ Getting Started
-1. Clone the repository
+```
+
+---
+
+# ⚙️ Getting Started
+
+## 1. Clone the Repository
+
+```bash
 git clone https://github.com/YOUR-USERNAME/procura.git
 cd procura
-2. Install dependencies
+```
 
-Install frontend dependencies:
+## 2. Install Dependencies
 
+### Frontend
+
+```bash
 cd frontend
 npm install
+```
 
-Install backend dependencies:
+### Backend
 
+```bash
 cd ../backend
 npm install
-3. Configure environment variables
+```
 
-Create .env files based on .env.example.
+## 3. Configure Environment Variables
+
+Create `.env` files based on `.env.example`.
 
 Example:
 
+```env
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_anon_key
 GEMINI_API_KEY=your_gemini_api_key
+```
 
 For the backend, keep private API keys server-side.
 
-Never commit real API keys or secrets to GitHub.
+**Never commit real API keys or secrets to GitHub.**
 
-4. Start the backend
+## 4. Start the Backend
+
+```bash
 npm run dev
-5. Start the frontend
+```
+
+## 5. Start the Frontend
+
+```bash
 npm run dev
+```
 
 Open the local development URL shown by Vite.
 
-🗄️ Database
+---
 
-Procura uses Supabase PostgreSQL for persistent application data.
+# 🗄️ Database
+
+Procura uses **Supabase PostgreSQL** for persistent application data.
 
 Major entities include:
 
+```text
 Users
 Departments
 Startups
@@ -344,82 +417,104 @@ Pilots
 Pilot KPIs
 Pilot Results
 Activity Logs
+```
 
-Authentication is handled through Supabase Auth, while Row Level Security helps enforce data access policies.
+Authentication is handled through **Supabase Auth**, while **Row Level Security (RLS)** helps enforce data access policies.
 
-🎯 MVP Scope
+---
+
+# 🎯 MVP Scope
 
 The current MVP focuses on the core innovation procurement journey:
 
-Role-based authentication
-Government dashboard
-Startup dashboard
-Evaluator dashboard
-Challenge creation
-AI-assisted challenge structuring
-Startup discovery
-Startup matching
-Application management
-Evaluation
-Pilot management
-KPI tracking
-Evidence submission
-Evidence review
-Scale-up review
-Activity trail
+* Role-based authentication
+* Government dashboard
+* Startup dashboard
+* Evaluator dashboard
+* Challenge creation
+* AI-assisted challenge structuring
+* Startup discovery
+* Startup matching
+* Application management
+* Evaluation
+* Pilot management
+* KPI tracking
+* Evidence submission
+* Evidence review
+* Scale-up review
+* Activity trail
 
 The MVP intentionally avoids unnecessary infrastructure complexity such as:
 
-Blockchain
-Kubernetes
-Kafka
-Complex microservices
-Autonomous AI agents
-Unnecessary third-party procurement integrations
+* Blockchain
+* Kubernetes
+* Kafka
+* Complex microservices
+* Autonomous AI agents
+* Unnecessary third-party procurement integrations
 
-The goal is to demonstrate the core value of evidence-based innovation procurement with a practical and buildable architecture.
+The goal is to demonstrate the **core value of evidence-based innovation procurement** with a practical and buildable architecture.
 
-🌍 Future Scope
+---
+
+# 🌍 Future Scope
 
 Potential future extensions include:
 
-Government department integrations
-Startup verification integrations
-Digital document verification
-Advanced procurement workflows
-Multi-department challenge sharing
-Advanced analytics
-Pilot benchmarking
-Automated reporting
-Additional government compliance workflows
-Integration with public procurement systems
-🏆 Smart India Hackathon 2026
+* Government department integrations
+* Startup verification integrations
+* Digital document verification
+* Advanced procurement workflows
+* Multi-department challenge sharing
+* Advanced analytics
+* Pilot benchmarking
+* Automated reporting
+* Additional government compliance workflows
+* Integration with public procurement systems
 
-Problem Statement: SIH26136YELLOW
+---
 
-Theme: Software / Smart Automation
+# 🏆 Smart India Hackathon 2026
 
-Solution: Procura — Public Innovation Procurement Platform
+**Problem Statement:** SIH26136YELLOW
+
+**Theme:** Software / Smart Automation
+
+**Solution:** Procura — Public Innovation Procurement Platform
 
 Procura is designed around the idea that innovative procurement should not jump directly from:
 
+```text
 Problem → Purchase
+```
 
 Instead:
 
+```text
 Problem → Test → Measure → Evidence → Scale
-📌 Project Status
+```
 
-🚧 MVP / Hackathon Prototype
+---
+
+# 📌 Project Status
+
+🚧 **MVP / Hackathon Prototype**
 
 The project is being developed as a functional prototype demonstrating the complete innovation procurement lifecycle.
 
-👨‍💻 Team
+---
 
-Built for Smart India Hackathon 2026.
+# 👨‍💻 Team
 
-📜 License
+Built for **Smart India Hackathon 2026**.
+
+---
+
+# 📜 License
 
 This project is developed for educational, research, and hackathon purposes.
 
 Add an appropriate open-source license before distributing the project publicly.
+
+```
+```
