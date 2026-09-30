@@ -1,4 +1,3 @@
-````markdown
 # 🚀 PROCURA
 
 ### Public Innovation Procurement Platform
@@ -515,6 +514,3 @@ Built for **Smart India Hackathon 2026**.
 This project is developed for educational, research, and hackathon purposes.
 
 Add an appropriate open-source license before distributing the project publicly.
-
-```
-```
