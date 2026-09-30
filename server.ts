@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import dotenv from 'dotenv';
-import { apiRouter } from './server/routes';
+import { apiRouter } from './backend/src/routes';
 
 dotenv.config();
 
@@ -26,27 +26,35 @@ async function startServer() {
     res.json({ status: 'ok', service: 'procura-api', timestamp: new Date().toISOString() });
   });
 
-  if (!isProd) {
-    // Development mode: Vite middleware
+  const distPath = path.resolve(__dirname, 'dist');
+  const hasDist = fs.existsSync(distPath) && fs.existsSync(path.resolve(distPath, 'index.html'));
+
+  if (isProd && hasDist) {
+    // Production mode: Serve pre-built static assets
+    app.use(express.static(distPath));
+    app.get('*', (_req, res) => {
+      res.sendFile(path.resolve(distPath, 'index.html'));
+    });
+  } else {
+    // Development mode or fallback: Vite dev server with middleware
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
-  } else {
-    // Production mode: Serve dist folder
-    const distPath = path.resolve(__dirname, 'dist');
-    if (fs.existsSync(distPath)) {
-      app.use(express.static(distPath));
-      app.get('*', (_req, res) => {
-        res.sendFile(path.resolve(distPath, 'index.html'));
-      });
-    } else {
-      console.warn(`[PROCURA] Dist directory not found at ${distPath}. Building may be required.`);
-      app.get('*', (_req, res) => {
-        res.status(503).send('Application is initializing or dist folder is missing. Please run build.');
-      });
-    }
+
+    // Fallback for HTML requests to transform index.html
+    app.use('*', async (req, res, next) => {
+      const url = req.originalUrl;
+      try {
+        let template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        template = await vite.transformIndexHtml(url, template);
+        res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
+      } catch (e: any) {
+        if (vite.ssrFixStacktrace) vite.ssrFixStacktrace(e);
+        next(e);
+      }
+    });
   }
 
   app.listen(PORT, '0.0.0.0', () => {
