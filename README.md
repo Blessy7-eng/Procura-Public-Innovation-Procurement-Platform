@@ -508,9 +508,3 @@ The project is being developed as a functional prototype demonstrating the compl
 Built for **Smart India Hackathon 2026**.
 
 ---
-
-# 📜 License
-
-This project is developed for educational, research, and hackathon purposes.
-
-Add an appropriate open-source license before distributing the project publicly.
