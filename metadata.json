@@ -1,0 +1,6 @@
+{
+  "name": "PROCURA - Public Innovation Procurement Platform",
+  "description": "Connecting government demand with startup innovation to pilot and prove solutions with measurable evidence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
